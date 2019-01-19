@@ -87,17 +87,17 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  let sortedArray = array.sort();
-  for (let i = 1; i < sortedArray.length; i++){
-    if (sortedArray[i] === sortedArray[i-1]){
-      
-    }
-
-    }
+  let object = {};
+  for (let i = 0; i < array.length; i++){
+    object[array[i]] = true;
   }
-
-
+  cb(Object.keys(object));
 }
-removeDuplicates(items, function (noDuplicates){
+let randomNum = [1, 5, 4, 7, 2, 4, 5, 10, 8];
+
+removeDuplicates(randomNum, function (noDuplicates){
   console.log(noDuplicates)
 });
+
+
+
